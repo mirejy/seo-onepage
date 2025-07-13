@@ -21,6 +21,15 @@ export default function Footer() {
             >
               juliasun.beauty@gmail.com
             </a>
+            <br /><br />
+            <a
+              href="/privacy.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-700"
+            >
+              Privacy Policy
+            </a>
           </div>
 
           {/* Часы работы */}

@@ -11,10 +11,20 @@ export default function ContactSection() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Add form submission logic
-    console.log("Form submitted:", form);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+    const data = await res.json();
+    if (data.success) {
+      alert("Messaggio inviato!");
+      setForm({ name: "", email: "", phone: "" });
+    } else {
+      alert("Errore: " + (data.message ?? ""));
+    }
   };
 
   return (
@@ -23,7 +33,9 @@ export default function ContactSection() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Left: contact info + form */}
           <div>
-            <h2 className="text-3xl font-semibold mb-4 self-center">Contatti</h2>
+            <h2 className="text-3xl font-semibold mb-4 self-center">
+              Contatti
+            </h2>
             <p className="text-base text-gray-700 mb-2 self-center">
               juliasun.beauty@gmail.com
             </p>
