@@ -37,7 +37,7 @@ export default function Header() {
       {isOpen && (
         <div className="flex flex-col items-center justify-center space-y-5 text-lg font-semibold py-10 md:hidden bg-white/90">
           <a href="#services" onClick={() => setIsOpen(false)}>Servizi</a>
-          <a href="#portfolio" onClick={() => setIsOpen(false)}>Portfolio</a>
+          <a href="https://www.instagram.com/juliasunsecrets/" onClick={() => setIsOpen(false)}>Portfolio</a>
           <a href="#contact" onClick={() => setIsOpen(false)}>Contatti</a>
         </div>
       )}
