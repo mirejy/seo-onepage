@@ -5,6 +5,8 @@ import ContactSection from "../../../components/ContactSection/ContactSection"
 import Footer from "../../../components/Footer/Footer"
 import ServiceFeatures from "../../../components/ServiceFeatures/ServiceFeatures"
 import PhotoSlider from "../../../components/PhotoSlider/PhotoSlider"
+import PromoPrice from "../../../components/PromoPrice/PromoPrice"
+
 
 import "../../../styles/globals.css"
 
@@ -22,6 +24,7 @@ export default function TreZone() {
           "/images/botox-4.jpg",
         ]} />
       <HeroSection2 />
+      <PromoPrice />
       <ContactSection />
       <Footer />
     </>

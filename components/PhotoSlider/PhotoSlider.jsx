@@ -19,6 +19,7 @@ export default function PhotoSlider({ images }) {
             snap-x md:snap-none snap-mandatory
             space-x-6 px-6 md:px-0
             scrollbar-none
+            md:justify-center 
           "
         >
           {images.map((src, i) => (
