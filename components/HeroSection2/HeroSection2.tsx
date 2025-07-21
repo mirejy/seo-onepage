@@ -35,7 +35,7 @@ export default function HeroSection2() {
           {/* Фото */}
           <div className="w-full">
             <Image
-              src="/hero2.jpg" // замените на свой путь
+              src="/images/hero2.jpg" // замените на свой путь
               alt="Cosmetologo"
               width={500}
               height={600}
