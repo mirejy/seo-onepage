@@ -24,9 +24,3 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.hero-bg {
-  background-color: rgba(255,255,255,0.6);      /* фолбэк для Firefox */
-  -webkit-backdrop-filter: blur(8px);            /* Safari, iOS */
-  backdrop-filter: blur(8px);                    /* Chrome, Edge */
-}
