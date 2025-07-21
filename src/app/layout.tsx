@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
+import SEO from "./seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,40 +13,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: 'Beauty Secrets JuliaSun — Botox e Cosmetologia a Collemontanino PI',
-  description:
-    'Specialista in trattamenti di botox (tossina botulinica), ringiovanimento viso e servizi estetici a Collemontanino (PI). Prenota una consulenza personalizzata.',
-  openGraph: {
-    title: 'Beauty Secrets JuliaSun — Botox e Cosmetologia',
-    description:
-      'Esperta in botox, filler e trattamenti di cosmetologia naturale a Collemontanino PI. Prenota ora.',
-    url: 'https://tuo-dominio.it/',
-    siteName: 'Beauty Secrets JuliaSun',
-    images: [
-      {
-        url: 'https://tuo-dominio.it/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Beauty Secrets JuliaSun',
-      },
-    ],
-    locale: 'it_IT',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Beauty Secrets JuliaSun — Botox e Cosmetologia',
-    description:
-      'Esperta in botox e trattamenti estetici a Collemontanino PI. Prenota la tua consulenza!',
-    images: ['https://tuo-dominio.it/og-image.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,9 +20,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <SEO />
+
+        {/* Meta Pixel Code */}
+        <Script id="fb-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1076271397967446');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `
+            <img height="1" width="1" style="display:none"
+              src="https://www.facebook.com/tr?id=1076271397967446&ev=PageView&noscript=1"/>
+            `,
+          }}
+        />
+        {/* End Meta Pixel Code */}
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
