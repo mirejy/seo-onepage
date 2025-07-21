@@ -28,9 +28,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="bg-gray-200 py-10">
+    <section id="contact" className="relative z-10 bg-gray-200 py-10 text-black">
       <Container>
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-start">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-start text-black">
           {/* Колонка с формой */}
           <div className="w-full md:w-1/2">
             <h2 className="text-3xl font-semibold mb-4 text-center md:text-left">
