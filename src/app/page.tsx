@@ -9,8 +9,8 @@ import "../../styles/globals.css"
 export default function Home() {
   return (
     <>
-      <Header />
-      <Hero />
+      <Header main={true}/>
+      <Hero title="Il tuo aspetto — la tua scelta" buttonText="Prenota una consulenza" buttonLink="#contact" />
       <HeroSection2 />
       <ServicesAccordion />
       <ContactSection />

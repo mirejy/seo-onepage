@@ -30,13 +30,41 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-gray-200 py-10">
       <Container>
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-center">
-
-          {/* Левая колонка: форма */}
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-start">
+          {/* Колонка с формой */}
           <div className="w-full md:w-1/2">
-            <h2 className="text-3xl font-semibold mb-4 text-center md:text-left">Contatti</h2>
-            <p className="text-base text-gray-700 mb-2 text-center md:text-left">juliasun.beauty@gmail.com</p>
-            <p className="text-base text-gray-700 mb-6 text-center md:text-left">+39 351 601 47 37</p>
+            <h2 className="text-3xl font-semibold mb-4 text-center md:text-left">
+              Prenota una consulenza
+            </h2>
+
+            {/* Соц-кнопки — видимы только на мобильных */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-6 justify-center md:hidden">
+              <a
+                href="https://www.facebook.com/profile.php?id=61578100057910"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition w-full sm:w-auto"
+              >
+                <Facebook size={24} />
+                <span>Facebook</span>
+              </a>
+              <a
+                href="https://www.instagram.com/juliasunsecrets/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-2 bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full transition w-full sm:w-auto"
+              >
+                <Instagram size={24} />
+                <span>Instagram</span>
+              </a>
+            </div>
+
+            <p className="text-base text-gray-700 mb-2 text-center md:text-left">
+              juliasun.beauty@gmail.com
+            </p>
+            <p className="text-base text-gray-700 mb-6 text-center md:text-left">
+              +39 351 601 47 37
+            </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -101,7 +129,7 @@ export default function ContactSection() {
             </form>
           </div>
 
-          {/* Правая колонка: карта + соцсети */}
+          {/* Колонка с картой */}
           <div className="w-full md:w-1/2 flex flex-col items-center">
             <div className="w-full h-64 md:h-96 mb-4">
               <iframe
@@ -113,26 +141,29 @@ export default function ContactSection() {
                 allowFullScreen
               />
             </div>
-            <div className="flex space-x-6">
+
+            {/* Соц-кнопки — видимы только на desktop */}
+            <div className="hidden md:flex gap-4 mt-6">
               <a
                 href="https://www.facebook.com/profile.php?id=61578100057910"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-[#0E4E34]"
+                className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition"
               >
-                <Facebook size={28} />
+                <Facebook size={24} />
+                <span>Facebook</span>
               </a>
               <a
                 href="https://www.instagram.com/juliasunsecrets/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-[#0E4E34]"
+                className="flex items-center justify-center space-x-2 bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-full transition"
               >
-                <Instagram size={28} />
+                <Instagram size={24} />
+                <span>Instagram</span>
               </a>
             </div>
           </div>
-
         </div>
       </Container>
     </section>
